@@ -1,0 +1,14 @@
+.processblock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.process {
+  margin: 25px;
+  text-align: center;
+}

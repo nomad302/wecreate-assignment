@@ -1,0 +1,42 @@
+h2 {
+  text-align: center;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.form-container input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.form-container button {
+  padding: 10px 15px;
+  margin: 10px;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 5px;
+  cursor: pointer;
+  background: rgb(74, 180, 74);
+  color: #fff;
+}
+
+.form-container .red-button {
+  background: #ff5252;
+}
+.form-container li {
+  list-style: none;
+}
+.form-container .dynamic-inputs {
+  display: flex;
+  flex-direction: column;
+}

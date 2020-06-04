@@ -1,0 +1,45 @@
+.process-container {
+  margin: 50px 0;
+}
+.process-container .process-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.process-container .process-components {
+  margin: auto;
+}
+.process-container .process-components .top,
+.process-container .process-components .middle,
+.process-container .process-components .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.discovery,
+.wireframes,
+.research-container,
+.ui-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  background: #fff;
+  border-radius: 50%;
+}
+.discovery {
+  background: #4dd0e1;
+}
+.process-one,
+.process-two,
+.process-three,
+.process-four {
+  margin: 25px;
+  text-align: center;
+}
+.process-mid {
+  margin: 25px;
+}
