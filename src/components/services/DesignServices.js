@@ -1,6 +1,4 @@
 import React from "react";
-import "../section/section.css";
-import "./DesignService.css";
 import uxd from "./user-experience-design.svg";
 import visuald from "./visual-design.svg";
 

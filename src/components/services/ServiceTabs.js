@@ -1,5 +1,4 @@
 import React from "react";
-import "./services.css";
 
 const ServiceTabs = () => {
   return (
@@ -7,6 +6,12 @@ const ServiceTabs = () => {
       <h2>Design Process Services</h2>
       <div className="tabs-flex">
         <div className="tab1">
+          <p>Design & Design</p>
+        </div>
+        <div className="tab">
+          <p>Design & Design</p>
+        </div>
+        <div className="tab">
           <p>Design & Design</p>
         </div>
         <div className="tab">

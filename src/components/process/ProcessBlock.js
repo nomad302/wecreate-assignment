@@ -1,7 +1,6 @@
 import React from "react";
-import "./Processblock.css";
 
-const ProcessBlock = props => {
+const ProcessBlock = (props) => {
   return (
     <div className="process">
       <div

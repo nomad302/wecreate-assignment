@@ -1,5 +1,4 @@
 import React from "react";
-import "./process.css";
 import research from "./img/research.svg";
 import discovery from "./img/discovery-white.svg";
 import wireframes from "./img/wireframe.svg";
@@ -21,7 +20,7 @@ const Process = () => {
         </div>
         <div className="middle">
           <ProcessBlock
-            name={"2. Discovery"}
+            name={"1. Discovery"}
             img={discovery}
             background="#4dd0e1"
           />

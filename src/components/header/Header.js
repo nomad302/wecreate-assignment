@@ -1,5 +1,4 @@
 import React from "react";
-import "./header.css";
 import prodDesign from "./product_Design.png";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -22,7 +21,7 @@ class Header extends React.Component {
               style={{
                 textDecoration: "none",
                 color: "#4dd0e1",
-                fontWeight: "bold"
+                fontWeight: "bold",
               }}>
               {this.props.currentRoute === "/" ? "Next Page" : "Go Back"}
             </Link>
@@ -42,10 +41,10 @@ class Header extends React.Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     currentRoute: state.currentRoute.value,
-    headerData: state.homePageData.headerBlock
+    headerData: state.homePageData.headerBlock,
   };
 };
 export default connect(mapStateToProps, { getFirstPageData })(Header);

@@ -1,5 +1,4 @@
 import React from "react";
-import "./form.css";
 import { Field, FieldArray, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { addUsers } from "../../actions";
@@ -41,7 +40,7 @@ class Form extends React.Component {
     </ul>
   );
 
-  renderAllUsers = users => {
+  renderAllUsers = (users) => {
     return users.map((user, i) => {
       return (
         <div>
@@ -50,7 +49,7 @@ class Form extends React.Component {
       );
     });
   };
-  onSubmit = formValues => {
+  onSubmit = (formValues) => {
     setTimeout(() => {
       this.props.addUsers(formValues.users);
     }, 3000);
@@ -58,11 +57,13 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="form-wrapper">
         <h2>Dynamic Form</h2>
         <div className="form-container">
           <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-            <h3>Add User Data</h3>
+            <h3 style={{ marginBottom: "15px" }}>
+              Add User (First Name, Last Name)
+            </h3>
             <div className="dynamic-inputs">
               <FieldArray name="users" component={this.renderUsers} />
             </div>
@@ -73,12 +74,8 @@ class Form extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {};
-};
-
 const ReduxForm = reduxForm({
-  form: "dynamicForm"
+  form: "dynamicForm",
 })(Form);
 
-export default connect(mapStateToProps, { addUsers })(ReduxForm);
+export default connect(null, { addUsers })(ReduxForm);

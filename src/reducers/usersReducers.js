@@ -3,6 +3,9 @@ export default (state = [], action) => {
     case "ADD_USERS": {
       return action.payload;
     }
+    case "CLEAR_USERS": {
+      return [];
+    }
     default:
       return state;
   }

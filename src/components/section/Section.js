@@ -1,7 +1,7 @@
 import React from "react";
-import "./section.css";
+import { connect } from "react-redux";
 
-const Section = props => {
+const Section = (props) => {
   return (
     <div className="section-container">
       <div className="section-item">
@@ -9,20 +9,20 @@ const Section = props => {
       </div>
       <div className="section-item">
         <div className="content2">
-          <h2>More than visual design, more than interaction</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis
-            impedit voluptatum eos maiores? Aut qui, reiciendis placeat omnis
-            accusamus impedit!
-          </p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur,
-            necessitatibus.
-          </p>
+          <h2>{props.sectionData ? props.sectionData.header : ""}</h2>
+          <p>{props.sectionData ? props.sectionData.para1 : ""}</p>
+          <p>{props.sectionData ? props.sectionData.para2 : ""}</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Section;
+const mapStateToProps = (state) => {
+  if (state.currentRoute.value === "/") {
+    return { sectionData: state.homePageData.sectionData };
+  } else {
+    return { sectionData: state.secondPageData.sectionData };
+  }
+};
+export default connect(mapStateToProps)(Section);

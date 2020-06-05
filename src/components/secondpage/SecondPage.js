@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getCurrentRoute } from "../../actions";
+import { getCurrentRoute, getSecondPageData } from "../../actions";
 import Section from "../section/Section";
 import header2 from "./header2.png";
 import Form from "./form";
@@ -8,6 +8,10 @@ import Form from "./form";
 class SecondPage extends React.Component {
   componentDidMount() {
     this.props.getCurrentRoute(this.props.location.pathname);
+    // Fake API CAll
+    setTimeout(() => {
+      this.props.getSecondPageData();
+    }, 3000);
   }
   renderUsers = () => {
     if (!this.props.users) {
@@ -21,18 +25,28 @@ class SecondPage extends React.Component {
       );
     });
   };
-  render() {
+
+  renderAllUsers() {
     return (
       <div>
-        <Section img={header2} />
-        <h1 style={{ textAlign: "center" }}>All Users </h1>
+        <h1>All Users </h1>
         <div className="dynamic-inputs">{this.renderUsers()}</div>
+      </div>
+    );
+  }
+  render() {
+    return (
+      <div className="secondpage-wrapper">
+        <Section img={header2} />
+        {this.props.users.length ? this.renderAllUsers() : null}
         <Form />
       </div>
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return { users: state.users };
 };
-export default connect(mapStateToProps, { getCurrentRoute })(SecondPage);
+export default connect(mapStateToProps, { getCurrentRoute, getSecondPageData })(
+  SecondPage
+);
